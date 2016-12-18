@@ -60,7 +60,7 @@ contract ProofOfExistence{
             // "0x8aed0440c9cacb4460ecdd12f6aff03c27cace39666d71f0946a6f3e9022a4a1"
         }
 
-        // chech if exists
+        // check if exists
         if (sha256Docs[sha256(_docText)].docIndex > 0){
             // throw;
             return sha3("text already exists"); //
