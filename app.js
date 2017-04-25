@@ -31,6 +31,7 @@ app.disable('x-powered-by');
 
 /* --- Variables: */
 var apiKey = process.env.APIKEY;
+console.log('process.env.APIKEY: ' + apiKey);
 
 /* --- web3.js: */
 Web3 = require('web3');
@@ -125,7 +126,7 @@ var abi = [{
     "type": "event"
 }];
 
-var contractAddress = "0x80f84866d4872f1ea412ddf10e2ed7af0b8ca8fb";
+var contractAddress = "0x80F84866D4872f1eA412DDf10E2eD7AF0B8Ca8FB";
 var contractManagerAddress = "0x4412041c61EF9a1783Eb3F8bC526aE5d05588cDa";
 
 var ProofOfExistence = web3.eth.contract(abi).at(contractAddress);
@@ -147,8 +148,11 @@ rest.post("/proofofexistence-add", function (request, content, callback) {
 
     if (request.headers.apikey === apiKey || content.apikey === apiKey) {
 
+        console.log('apiKey is correct');
+
         var transactionObject = {
-            from: contractManagerAddress, // or web3.eth.accounts[0] //
+            // from: contractManagerAddress, // or web3.eth.accounts[0] //
+            from: web3.eth.accounts[0],
             // to: ProofOfExistence.address,
             gas: 4000000
             // nonce: web3.eth.getTransactionCount(contractManagerAddress)
@@ -174,6 +178,7 @@ rest.post("/proofofexistence-add", function (request, content, callback) {
 
     } else {
         resObj.error = "not authorized to call API";
+        console.log('not authorized to call API');
         callback(null, resObj);
     }
 });
@@ -225,7 +230,8 @@ rest.post("/proofofexistence-get", function (request, content, callback) {
 });
 
 /* --- Express routes */
-// app.use('/', routes);
+var routes = require('./routes/index');
+app.use('/', routes);
 // app.use('/users', users);
 
 // catch 404 and forward to error handler

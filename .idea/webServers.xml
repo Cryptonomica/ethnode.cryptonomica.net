@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="8a21a819-9bae-4cab-8d3f-e72c199cb0a9" name="ethnode.cryptonomica.net" url="https://ethnode.cryptonomica.net">
+        <fileTransfer host="ethnode.cryptonomica.net" port="22" privateKey="$USER_HOME$/.ssh/aws.gen.2016.11.20.pem" rootFolder="/home/ubuntu" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

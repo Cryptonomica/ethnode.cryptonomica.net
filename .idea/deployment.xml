@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="ethnode.cryptonomica.net">
+    <serverData>
+      <paths name="ethnode.cryptonomica.net">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/server" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/node_modules" />
+            <excludedPath local="true" path="$PROJECT_DIR$/ethnode.cryptonomica.net.iml" />
+            <excludedPath local="true" path="$PROJECT_DIR$/package.Old.json" />
+            <excludedPath local="true" path="$PROJECT_DIR$/.gitignore" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
