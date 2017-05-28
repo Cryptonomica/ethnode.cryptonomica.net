@@ -19,7 +19,7 @@ add:
 ````
 export ETHNODESSLKEY=/home/... privatekey.pem
 export ETHNODESSLCERT=/home/...full_chain.pem
-export APIKEY=...
+export APIKEY=... #
 ````
 
 run:
@@ -59,6 +59,19 @@ go to app dir and:
 screen -mS NodeJS ./bin/www
 ````
 
+or with pm2 (we use pm2):
+
+
+````sh
+
+pm2 start ./bin/www
+pm2 list
+pm2 show 0
+# to stop: pm2 stop 0
+# to restart: pm2 restart 0
+````
+
+
 ## Installing Geth
 
 ````sh
@@ -84,4 +97,10 @@ to start JavaScript Console:
 geth attach
 ````
 
+to check current block number using JavaScript Console:
+
+````sh
+web3.eth.blockNumber
+````
+and compare to current block number (last block) on [etherscan](https://etherscan.io)
 
